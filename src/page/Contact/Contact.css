@@ -1,0 +1,178 @@
+
+.pagecontainer {
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    width: 100%;
+}
+
+
+.cont-icons {
+    font-size: 30px;
+    color: #e67e22;
+    cursor: pointer;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.detcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .comments {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+  }
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: none;
+  }
+ 
+  button {
+    width: 33%;
+    background: #6a0dad;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  button:hover {
+    background: #5a0cad;
+  }
+
+
+.footcont {
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+    padding: 20px;
+    position: relative;  
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #3e4e54;
+  
+}
+
+.footcol {
+    text-align: center;
+    width: 30%;
+}
+
+.footcol h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footcol p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footcol ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footcol ul li {
+    margin: 5px 0;
+}
+
+.footcol ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footcol ul li a:hover {
+    color: #e67e22;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    padding: 5px;
+}
+
+td a img {
+    transition: transform 0.3s ease;
+}
+
+td a img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detcontainer {
+        width: 90%;
+    }
+
+    .footcont {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footcol {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

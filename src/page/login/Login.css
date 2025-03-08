@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("/assets/free-car-rental-background-0bkxd.jpeg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+   
+}
+
+form h2 {
+    font-size: 16px;
+    text-align: left;
+    color: #555;
+    margin-top: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+form input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 6px rgba(79, 172, 254, 0.6);
+}
+
+form button {
+    align-items: center;
+    margin-top: 10px;
+    padding: 12px;
+    background: #4facfe;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: #0086ff;
+}
+
+.clink {
+    color: #4facfe;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.clink:hover {
+    text-decoration: underline;
+}
+
+p{
+    padding: 10px;
+}
+
+.pass-cont {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .pass-cont input {
+    width: 100%;
+    padding-right: 40px; 
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
+}
+

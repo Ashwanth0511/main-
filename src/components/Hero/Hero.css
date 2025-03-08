@@ -1,0 +1,91 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background: url('your-image-path.jpg') no-repeat center center/cover;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+}
+
+.herotest {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.herotest p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.explore {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.explore a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    padding: 10px ;
+    padding-left: 50px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.explore a:hover {
+    background: #ff4d00;
+    color: white;
+}
+
+.explore a img {
+    width: 60px;
+    margin-left: 60px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.herodots {
+    display: flex;
+    gap: 10px;
+}
+
+.herodot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.herodot.orange {
+    background: #ff4d00; 
+}

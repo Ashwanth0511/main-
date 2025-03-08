@@ -1,0 +1,147 @@
+
+body {
+    padding-top: 100px; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 235, 215);
+    padding: 20px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, 
+                rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, 
+                rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.navtabs {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.navtabs li {
+    cursor: pointer;
+}
+
+.navtabs li a {
+    text-decoration: none;
+    color: rgb(62, 1, 1);
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.navtabs li a:hover {
+    color: black;
+}
+
+.navtabs .active a {
+    text-decoration: underline;
+    color: black;
+}
+
+.navsign {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.navbar button {
+    background: rgba(243, 211, 178, 0.743);
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 3px solid black;
+    color: black;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar button a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar button:hover {
+    background-color: rgb(228, 122, 23);
+    color: white;
+    transform: scale(1.05);
+}
+
+.user-drop {
+    position: absolute;
+    z-index: 1000;
+    top: 67px;
+    right: 0;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    text-align: center;
+}
+
+.user-profile:hover .user-drop {
+    display: block;
+}
+
+.user-profile p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.user-profile button {
+    justify-content: center;
+    background-color: #f5f5f5;
+    border: 1px solid #333;
+    border-radius: 20px;
+    margin-left: 40px;
+    padding: 8px 35px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.user-profile button:hover {
+    background-color: rgb(228, 95, 23);
+    color: white;
+}
