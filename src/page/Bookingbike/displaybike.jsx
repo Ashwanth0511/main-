@@ -83,17 +83,15 @@ const filterbikes = selectedcompany
 
       </div>
     
-  <div className="cardetail">
-      <>
-     
-        
+  <div className="bikedetail">
+      <> 
       {
               filterbikes.length>0?(
                 filterbikes.map((bike)=>(
-                  <div className="Carflex" key={bike._id} >
-                  <div className="carimage"><img src={bike.image} alt="" /></div>
+                  <div className="Bikeflex" key={bike._id} >
+                  <div className="bikeimage"><img src={bike.image} alt="" /></div>
                   <h5>{bike.name}</h5>
-                      <p>${bike.price} per day</p>
+                      <p>₹{bike.price} per day</p>
                      {bike.BookStatus?
                      <button onClick={() =>{handlebook(bike._id)}} className="Book">Book</button>:<p style={{color:"green"}}>Available On "{ new Date(bike.availableOn).toLocaleDateString()}"!</p>}
                     

@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Bookingcar.css";
 import Displaycar  from "./dispalycar";
+import Swal from "sweetalert2";
 
 export function Bookingcar() {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -42,7 +43,12 @@ export function Bookingcar() {
                            maxDate={selectedDate ? new Date(new Date(selectedDate).setDate(selectedDate.getDate() + 4)) : maxdate}
                              placeholderText="Select a date"
                              className="date-box" />
-                        <button onClick={() => selectedDate && selectedReturn ? setShow(true) : alert("Please select a date")}>Show Available Cars </button>
+                        <button onClick={() => selectedDate && selectedReturn ? setShow(true) :  Swal.fire({
+                                                icon: "warning",
+                                                title: "Date Not Selected!",
+                                                text: "Select a date first.",
+                                                confirmButtonColor: "#f39c12",
+                                            })}>Show Available Cars </button>
                     </div>
                     {show && <Displaycar need={selectedDate} still={selectedReturn}/>}
              </div>

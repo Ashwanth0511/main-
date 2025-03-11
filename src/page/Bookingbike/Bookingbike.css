@@ -8,7 +8,7 @@
     object-fit: cover; 
     z-index: -1;
 }
-.car-container {
+.bike-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,11 +65,12 @@ label {
     text-align: center;
 }
 
-button {
+.date-picker-container button {
     background-color: #33c555;
     color: white;
     border: none;
     width:50%;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
@@ -77,6 +78,6 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+.date-picker-container button:hover {
     background-color: #127126;
 }

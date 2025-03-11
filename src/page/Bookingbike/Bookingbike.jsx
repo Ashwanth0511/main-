@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Bookingbike.css";
 import { Displaybike } from "./displaybike";
-
+import Swal from "sweetalert2";
 
 export function Bookingbike() {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -45,7 +45,12 @@ export function Bookingbike() {
                              placeholderText="Select a date"
                              className="date-box"  />
 
-              <button onClick={() => selectedDate && selectedReturn ? setShow(true) : alert("Please select a date")}> Show Available bikes </button>
+              <button onClick={() => selectedDate && selectedReturn ? setShow(true) :  Swal.fire({
+                        icon: "warning",
+                        title: "Date Not Selected!",
+                        text: "Select a date first.",
+                        confirmButtonColor: "#f39c12",
+                    })}> Show Available bikes </button>
                     </div>
                {show && <Displaybike need={selectedDate} still={selectedReturn}/>}
         </div>

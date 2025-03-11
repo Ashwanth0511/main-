@@ -3,12 +3,13 @@ import './Home.css'
 import { Link } from "react-router-dom";
 import { BsFillSendFill } from "react-icons/bs";
 import reviewers from "./reviewers";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaThumbsUp, FaUserCircle } from "react-icons/fa";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import owners from "./owners";
 import axios from "axios";
 import Background from "../../components/Backgroung/Background";
 import Hero from "../../components/Hero/Hero";
+import Swal from "sweetalert2";
 
 export function Home(){
 
@@ -55,9 +56,21 @@ const handlecomments = (e)=>{
   e.preventDefault();
 
     if(!user){
-      alert("login to comment");
+      Swal.fire({
+        icon: "warning",
+        title: "Oops...",
+        text: "Login to comment!",
+      });
       return ;
-    }else{
+    }
+    if(!comment.trim()){
+      Swal.fire({
+        icon: "error",
+        title: "Empty Comment",
+        text: "Please enter a comment before submitting.",
+      });
+    }
+    else{
       
       axios.post('http://localhost:3001/comments',{
        name: user.uname,
@@ -76,13 +89,17 @@ const handlecomments = (e)=>{
 
   const com = async()=>{
     try{
-      const res = await axios.get('http://localhost:3001/comments');
-      setCommentlist(res.data);
+      const res = await axios.get('http://localhost:3001/comments',{params:{userid:user?._id}});
+      setCommentlist(res.data.map(comment =>({
+        ...comment,
+        likedByUser:!!comment.likedByUser,
+      })));
     }
     catch{
       err=>console.log(err);
     }
   }
+
   useEffect(()=>{
     const storeduser = JSON.parse(localStorage.getItem("user"));
     if(storeduser){
@@ -90,19 +107,40 @@ const handlecomments = (e)=>{
     }
     com();
   },[]);
-  
+
+  useEffect(() => {
+    if (user) {  
+      com();
+    }
+  }, [user]);
+
+  const handleLike = async(commentid) => {
+    if (!user) {
+      Swal.fire({
+        icon: "info",
+        title: "Login Required",
+        text: "Login to like comments!",
+      });
+      return;
+    }
+    setCommentlist(prev => prev.map(c =>
+      c._id === commentid ? { ...c, likedByUser: !c.likedByUser, likes: c.likedByUser ? c.likes - 1 : c.likes + 1 } : c
+    ));
+    try {
+      const res = await axios.post("http://localhost:3001/likes", { commentid ,userid:user._id});
+        setCommentlist(prev => 
+          prev.map(c => c._id === commentid ? { ...c, likes: res.data.likes,likedByUser:!!res.data.likedByUser} : c)
+        ); 
+      } catch (error) {
+        console.error("Error liking comment:", error);}
+  };
 
   return (
     <>
     <div >
     <div className="home-bg">
       <Background heroCount={heroCount}/>
-      <Hero heroData = {heroData[heroCount]}
-           heroCount= {heroCount}
-           setHeroCount={setHeroCount}
-           setId={setId}
-           />
-        
+      <Hero heroData = {heroData[heroCount]}  heroCount= {heroCount} setHeroCount={setHeroCount} setId={setId} />
     </div>
   </div>
     <div className="home-content">
@@ -178,29 +216,33 @@ const handlecomments = (e)=>{
 <div className="faq-comment">
   <h2>Write a comment</h2>
  <form onSubmit={(e)=>handlecomments(e)}>
-  <textarea rows={4} cols={50} placeholder="Write a comment" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
-  <button type="submit" ><BsFillSendFill /></button>
+  <textarea rows={4} cols={50} maxLength={60} placeholder="Write a comment" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
+  <button className="faq-send" type="submit" ><BsFillSendFill /></button>
  </form>
 
+ <h2>previous comments</h2>
  <div className="Commentdet">
+  
   <div className="Comments">
    {Array.isArray(commentlist) && commentlist.length > 0?(commentlist.map((comment)=>(
-      <div className="comment">
-        <p>{comment.name}</p>
+      <div key={comment._id} className="comment">
+        <p><FaUserCircle size={20}/> {comment.name}</p>
         <p>{comment.comment}</p>
-      </div>
+        <div className="like-class">
+  <FaThumbsUp className="like-button" onClick={() => handleLike(comment._id)} 
+  color={comment.likedByUser ? "black" : "grey"} /> {comment.likes}
+  </div> </div>
     ))):(
       <p>No comments yet. Be the first to comment!</p>
     )}
   </div>
  </div>
-  <hr />
+ <hr />
 </div>
 
 <div className="ownership">
 <h1>Ownerships</h1>
   <div className="own-cont">
- 
   <div className="owners">
     {
       owners.map((owner)=>(
@@ -211,7 +253,6 @@ const handlecomments = (e)=>{
       <h2>{owner.name}</h2>
       <p>{owner.detail}</p>
       <p>{owner.pos}</p>
-
         </div>
       ))
     }

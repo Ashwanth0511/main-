@@ -87,13 +87,13 @@ export function Bikebook() {
             <h3>YOUR BOOKING BIKE DETAILS</h3>
             <hr />
             <p>
+              <b>Bike Name:</b> {selectedbike.name}
+            </p>
+            <p>
               <b>Pickup Date:</b> {new Date(needn).toDateString()}
             </p>
             <p>
               <b>Return Date:</b> {new Date(stilln).toDateString()}
-            </p>
-            <p>
-              <b>Car Name:</b> {selectedbike.name}
             </p>
             <p>
               <b>Total Fare:</b> ${selectedbike.price}

@@ -1,5 +1,5 @@
 
-.cardetail {
+.bikedetail {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     flex-wrap: wrap;
@@ -9,7 +9,7 @@
     gap: 20px;
 }
 
-.Carflex {
+.Bikeflex {
     height: 320px;
     width: 250px;
     display: grid;
@@ -24,12 +24,12 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.Carflex:hover {
+.Bikeflex:hover {
     transform: scale(1.05);
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.carimage {
+.bikeimage {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,16 +39,16 @@
     overflow: hidden;
 }
 
-.carimage img {
+.bikeimage img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain; 
 }
-.Carflex h5{
+.bikeflex h5{
     font-size: 18px;
     margin-top: 4px;
 }
-.Carflex p {
+.bikeflex p {
     text-align: center;
     font-weight: bold;
     font-size: 16px;
@@ -80,10 +80,10 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 300px;
+    width: 400px;
 }
 .drop-dec {
-    margin-left: 50px; 
+    margin-left: 80px; 
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -91,12 +91,15 @@
 .drop-btn {
     display: flex;
     align-items: center;
+    margin-top: 20px;
     gap: 8px; 
+    font-size: 20px;
+    font-weight: 500;
     width: 100%;
     cursor: pointer;
     padding: 10px 15px;
     border: none;
-    background: #615e5e;
+    background: #767474;
     border-radius: 5px;
 }
 .drop-content {
@@ -108,7 +111,7 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 100;
-    max-height: 200px;
+    max-height: 275px;
     overflow-y: auto;
 }
 
@@ -118,6 +121,7 @@
     margin: 10px;
     border: 1px solid black;
     border-radius: 5px;
+    font-size: medium;
 }
 
 .search-inp:focus {
@@ -127,11 +131,12 @@
 .dropdown-item {
     padding: 10px;
     cursor: pointer;
+    font-size: 18px;
     transition: background 0.2s ease-in-out;
 }
 
 .dropdown-item:hover {
-    background-color: #f1f1f1;
+    background-color: #adaaaa;
 }
 
 .no-result {

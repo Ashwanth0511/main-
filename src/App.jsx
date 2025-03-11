@@ -9,6 +9,7 @@ import { Home } from './page/Home/Home'
 import { Bookingcar } from './page/Bookingcar/Bookingcar'
 import { Bookingbike } from './page/Bookingbike/Bookingbike'
 import { Bikebook } from './page/Bookingbike/bikebooking'
+import { Carbookbutton } from './page/Bookingcar/carbooking'
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/bikebooking' element={<Bikebook/>}/>
+        <Route path='/carbooking' element={<Carbookbutton/>}/>
       </Routes>
      
     </div>

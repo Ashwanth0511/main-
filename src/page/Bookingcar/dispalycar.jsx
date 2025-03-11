@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './display.css'
 import axios from "axios";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 export default function Displaycar({need,still}) {
     const needn = new Date(need);
@@ -11,6 +12,7 @@ export default function Displaycar({need,still}) {
   const [searchTerm,setSearchTerm] = useState("")
   const [dropdownopen, setDropdownopen] = useState(false);
   const [selectedcompany,setSelectcompany] = useState("");
+  const navigate = useNavigate();
 
   useEffect(()=>{
     axios.get('http://localhost:3001/cars')
@@ -28,16 +30,10 @@ export default function Displaycar({need,still}) {
   );
 
   const handlebook = (carId) => {
-          setCars ( (cars) =>
-              cars.map((car) =>
-                carId === car._id ?{
-              ...car,
-              bookedOn : need,
-              availableOn :still,
-            }: car
-
-            )
-          );
+    const selectedCar = cars.find((car) => car._id === carId);
+    if (selectedCar) {
+      navigate('/carbooking', { state: { selectedcar: selectedCar,needn,stilln } });
+    }
   };
   
  const availablecar = cars.map((car) =>{
@@ -95,7 +91,7 @@ const filtercars = selectedcompany
                   <div className="Carflex" key={car._id} >
                   <div className="carimage"><img src={car.image} alt="" /></div>
                   <h5>{car.name}</h5>
-                      <p>${car.price} per day</p>
+                      <p>₹{car.price} per day</p>
                      {car.BookStatus?<button onClick={() =>{handlebook(car._id)}
                                                                               }
                               className="Book">Book</button>:<p className="booked">Available On "{ new Date(car.availableOn).toLocaleDateString()}"!</p>}

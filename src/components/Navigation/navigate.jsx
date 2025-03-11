@@ -24,7 +24,7 @@ function Navi() {
     <>
       <div className='navbar'>
         <div className="logo-container">
-          <img src="assets\th-removebg-preview.png" alt="Star Rentals Logo" className="logo" />
+ <Link to="/"> <img src="assets\th-removebg-preview.png" alt="Star Rentals Logo" className="logo" /> </Link>
           <span className="brand-name">Star Rentals</span>
         </div>
 

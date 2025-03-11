@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./carbookbutton.css";
+import "./carbooking.css";
 import { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -43,7 +43,7 @@ export function Carbookbutton() {
   if (load && !user) {
     return null;
   }
-  const { car, needn, stilln } = bookingdata || {};
+  const { selectedcar, needn, stilln } = bookingdata || {};
   return (
     <>
    
@@ -83,10 +83,10 @@ export function Carbookbutton() {
               <b>Return Date:</b> {new Date(stilln).toDateString()}
             </p>
             <p>
-              <b>Car Type:</b> {car.name}
+              <b>Car Type:</b> {selectedcar.name}
             </p>
             <p>
-              <b>Total Fare:</b> ${car.price}
+              <b>Total Fare:</b> ${selectedcar.price}
             </p>
             <hr />
             <div className="det_nav">
@@ -118,7 +118,18 @@ export function Carbookbutton() {
               </ul>
             </div>)
              }
-              
+                {
+              (detail === 2) &&(
+                <div className="terms-container">
+  <h3>Terms and Conditions</h3>
+  <p>You must need a proper driving license to rent a vehicle</p>
+  <p>If once payment can be made booking is confoirmed.</p>
+  <p>If you want to cancel a booking 1 Day before Only 50% amount only refund</p>
+  <p>If the car or bike can be damaged you need to pay for repairs.</p>
+  <p>If any fine can be added for Bike can must be paid by you</p>
+</div>
+              )
+             }
             </div>
           </div>
         

@@ -103,12 +103,14 @@ body {
     color: white;
     transform: scale(1.05);
 }
-
+.user-icon{
+    margin-right: 20px;
+}
 .user-drop {
     position: absolute;
     z-index: 1000;
     top: 67px;
-    right: 0;
+    right: 20px;
     background: white;
     color: black;
     padding: 10px;

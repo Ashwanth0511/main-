@@ -89,7 +89,7 @@ app.get("/comments",async(req,res)=>{
   }
 })
 
-app.post("/Complains",(req,res)=>{
+app.post("/complains",(req,res)=>{
   complainmodule.create(req.body)
   .then(complain => res.json(complain))
   .catch(err=> err.json(err))

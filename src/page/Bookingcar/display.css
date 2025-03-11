@@ -1,0 +1,146 @@
+
+.cardetail {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.Carflex {
+    height: 320px;
+    width: 250px;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 3px solid black;
+    padding: 15px;
+    background: white;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Carflex:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carimage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carimage img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+}
+.Carflex h5{
+    font-size: 18px;
+    margin-top: 4px;
+}
+.Carflex p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Book {
+    justify-content: center;
+    margin-left: 50px;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: auto;
+}
+
+.Book:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 400px;
+}
+.drop-dec {
+    margin-left: 80px; 
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.drop-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px; 
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    background: #767474;
+    border-radius: 5px;
+}
+.drop-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #f7f7f7;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 100;
+    max-height: 275px;
+    overflow-y: auto;
+}
+
+.search-inp {
+    width: 90%;
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.search-inp:focus {
+    border-color: #000102;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #adaaaa;
+}
+
+.no-result {
+    padding: 10px;
+    color: #888;
+    text-align: center;
+}

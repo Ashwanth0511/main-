@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { FaShop } from "react-icons/fa6";
 import { IoIosSend } from "react-icons/io";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 export function Contact(){
@@ -20,10 +21,16 @@ export function Contact(){
 
   const handlecomplains = (e)=>{
     e.preventDefault();
-    alert("Sorry for our inconvinient We can solve your complain as soon as possible");
-    axios.post('http://localhost:3001/Complains',{rname,email,complain})
+    Swal.fire({
+      icon: "success",
+      title: "Complaint Submitted!",
+      text: "Sorry for the inconvenience. We will resolve your complaint as soon as possible.",
+      confirmButtonColor: "#3085d6",
+    });
+    axios.post('http://localhost:3001/complains',{rname,email,complain})
     .then(result=>console.log(result.data))
     .catch(err=>console.log(err));
+    setComplain("");
   }
 
   const [user,setUser] = useState(null);
@@ -76,13 +83,13 @@ export function Contact(){
     <h2>Also Contact Us Through</h2>
     <p>We can take action in 2 or 3 Working days</p>
     <div className="formouter">
-    <form onSubmit={()=>handlecomplains()}>
+    <form onSubmit={handlecomplains}>
       <label >Name :</label>
       <input type = "text" value={rname} onChange={(e)=>{setRname(e.target.value)}}  required></input>
       <label>Email :</label>
       <input type = "email" value={email} onChange={(e)=>setEmail(e.target.value ) } required></input>
       <label>Complains :</label>
-      <textarea name="complains" value={complain} rows={6} cols={31} minLength={20} onChange={(e)=>setComplain(e.target.value)} id="" placeholder="Write a complains" required></textarea>
+      <textarea name="complains" value={complain} rows={6} cols={31} minLength={20} onChange={(e)=>setComplain(e.target.value)} id="" placeholder="Write a complaint" required></textarea>
       <button type="submit"><IoIosSend /></button>
     </form>
     </div>   </div>

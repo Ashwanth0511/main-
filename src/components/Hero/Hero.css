@@ -1,89 +1,54 @@
 .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    background: url('your-image-path.jpg') no-repeat center center/cover;
+   margin: 0px 20px;
+   margin-top: 0px;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); 
-}
-
-.herotest {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.herotest p {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin: 10px 0;
+.herotest p{
+    color: #fff;
+    font-size: 110px;
+    font-weight: 500;
+    line-height: 130px;
 }
 
 .explore {
-    position: relative;
-    z-index: 2;
-    margin-top: 20px;
-}
-
-.explore a {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: white;
-    color: black;
-    padding: 10px ;
-    padding-left: 50px;
+    gap: 50px;
+    width: fit-content;
+    margin-top: 150px;
+    padding: 5px 8px;
+    padding-left: 30px;
     border-radius: 60px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    font-size: 1.5rem;
+    background-color: white;
+    cursor: pointer;
 }
 
-.explore a:hover {
-    background: #ff4d00;
-    color: white;
-}
-
-.explore a img {
-    width: 60px;
-    margin-left: 60px;
+.explore p{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+  margin-top: 80px;
+  margin-left: 90px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .herodots {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap:23px;
+    list-style: none;
 }
 
 .herodot {
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
+       width: 15px;
+       height: 15px;
+       background: #fff;
+       border-radius: 7.5px;
+       cursor:pointer;
 }
 
 .herodot.orange {
