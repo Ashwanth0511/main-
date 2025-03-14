@@ -24,7 +24,7 @@ hr {
     cursor: pointer;
 }
 
-p {
+.pagecontainer p {
     font-size: 16px;
     color: #555;
     margin-top: 10px;

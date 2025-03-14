@@ -2,170 +2,182 @@
 .Bookbutton-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    gap: 20px;
     padding: 20px;
-    background-color: #fff;
+    margin-top: 30px;
 }
 
 .booking-form {
-    width: 400px;
+    background: white;
     padding: 20px;
     border-radius: 10px;
-    background: #fff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
 }
 
 .booking-form h2 {
     text-align: center;
-    font-size: 22px;
-    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .booking-form label {
-    display: block;
-    margin-top: 10px;
     font-weight: bold;
-    color: #555;
+    margin-top: 10px;
+
 }
 
 .booking-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    width: 90%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.term {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.term input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.term a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.term a:hover {
+    text-decoration: underline;
 }
 
 .proceed-button {
-    background-color: #ff6600;
-    color: white;
-    padding: 12px;
     width: 100%;
+    background-color: #e65c00;
+    color: white;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-top: 15px;
+    transition: 0.3s ease;
 }
 
 .proceed-button:hover {
-    background-color: #e65c00;
-    transform: scale(1.05);
+    background-color: #cc5200;
+}
+
+.booking-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 460px;
+    min-height: 300px;
 }
 
 .booking-details {
-    flex: 1;
-    padding: 20px;
-    background: #f9f9f9;
+    background: white;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
-    width: 100%;
+    min-height: 200px;
 }
 
 .booking-details h3 {
-    font-size: 20px;
     text-align: center;
-    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .booking-details p {
     font-size: 16px;
-    margin: 8px 0;
-    font-weight: bold;
+    margin: 9px 0;
 }
 
 .det_nav {
     display: flex;
     justify-content: space-between;
-    padding: 12px;
-    border-radius: 8px;
-    background: #fff;
-    border: 2px solid #ff6600;
-    margin-top: 15px;
-}
-
-.det_nav .det-head {
-    flex: 1;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+    background: #f8f8f8;
     padding: 10px;
-    cursor: pointer;
-    color: #333;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-
-.det_nav .det-head:hover {
-    color: #e65c00;
-}
-
-.det_nav .active {
-    color: #fff;
-    background: #ff6600;
     border-radius: 5px;
-    border-bottom: 3px solid #d35400;
+}
+
+.det-head {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.det-head:hover {
+    text-decoration: underline;
 }
 
 .Detail-container {
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 15px;
-    text-align: center;
-}
-
-.inclusion, .exclusion, .terms {
-    padding: 15px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    border: 2px solid #ccc;
+    
+    max-width: 100%; 
+    justify-content: center;
+}
+.Detail-container h4{
+    text-align: center; 
+   
+}
+.Detail-container ul {
+    list-style: none;
+    padding: 5px;
+}
+.Detail-container .Re-icon{
+padding-right: 8px;
+}
+
+.Detail-container ul li::before {
+    color: black;
+    font-weight: bold;
+}
+.terms-container {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+    max-height: 125px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.terms-container h3 {
     text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.inclusion {
-    background: #e7f9e7;
-    border-color: #2ecc71;
+.terms-container p {
+    font-size: 14px;
+    margin: 8px 0;
+    word-wrap: break-word;
 }
 
-.exclusion {
-    background: #fbe5e5;
-    border-color: #e74c3c;
-}
-
-.terms {
-    background: #eaf4fc;
-    border-color: #3498db;
-}
-
-.inclusion:hover, .exclusion:hover, .terms:hover {
-    transform: scale(1.05);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
-}
 
 @media (max-width: 768px) {
-    .Bookbutton-container {
+    .Bookbutton-container{
         flex-direction: column;
-    }
-
-    .booking-form,
-    .booking-details {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .det_nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .det_nav .det-head {
-        width: 100%;
-        padding: 8px;
     }
 }

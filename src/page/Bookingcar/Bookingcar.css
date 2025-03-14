@@ -30,7 +30,7 @@
     margin-bottom: 10px;
 }
 
-h1 {
+.bg h1 {
     text-align: center;
     align-items: center;
     font-size: 24px;
@@ -38,7 +38,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-label {
+.bg label {
     text-align: center;
     font-size: 18px;
     padding: 10px;

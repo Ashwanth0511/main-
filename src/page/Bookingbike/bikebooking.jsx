@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "./bikebooking.css";
 import { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { FaGasPump } from "react-icons/fa";
+import { TbHelmet } from "react-icons/tb";
+import { PiSteeringWheelBold } from "react-icons/pi";
+import { TbParkingCircle } from "react-icons/tb";
+import { FaRoadBarrier } from "react-icons/fa6";
 
 export function Bikebook() {
   const location = useLocation();
@@ -117,17 +121,17 @@ export function Bikebook() {
                 <div className="inclusion">
                 <h4>Inclusion</h4>
                 <ul>
-                  <li>Petrol</li>
-                  <li>2 Helmets</li>
-                  <li>Drive your own</li>
+                  <li><FaGasPump className="Re-icon"/>Petrol</li>
+                  <li><TbHelmet className="Re-icon"/>2 Helmets</li>
+                  <li><PiSteeringWheelBold className="Re-icon"/>Drive your own</li>
                 </ul>
               </div>) }
             {(detail === 1) &&(
               <div className="exclusion">
               <h4>Exclusion</h4>
               <ul>
-                <li>Parking</li>
-                <li>Toll fee</li>
+                <li><TbParkingCircle className="Re-icon"/>Parking</li>
+                <li><FaRoadBarrier className="Re-icon"/>Toll fee</li>
               </ul>
             </div>)
              }

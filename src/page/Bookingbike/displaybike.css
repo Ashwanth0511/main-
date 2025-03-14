@@ -83,10 +83,10 @@
     width: 400px;
 }
 .drop-dec {
-    margin-left: 80px; 
-    position: relative;
-    display: inline-flex;
     align-items: center;
+    position: absolute;
+    right: 15px; 
+    top: 50%;
 }
 .drop-btn {
     display: flex;
