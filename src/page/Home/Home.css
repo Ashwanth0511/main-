@@ -164,6 +164,11 @@
     text-align: center;
 }
 
+.faq-sec{
+  border: solid black;
+  padding: 10px;
+}
+
 .faq-comment h2 {
     font-size: 24px;
     font-weight: bold;
@@ -175,11 +180,11 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+  
 }
 
 .faq-comment textarea {
-    width: 50%;
+    width: 70%;
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 10px;
@@ -191,9 +196,8 @@
     background-color: #007bff;
     color: white;
     border: none;
-    width: 10%;
     padding: 10px 15px;
-    border-radius: 10px;
+    border-radius: 100%;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
 }

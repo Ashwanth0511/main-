@@ -1,0 +1,177 @@
+
+.Bookbutton-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.booking-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.booking-form label {
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.booking-form input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.term {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.term input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.term a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.term a:hover {
+    text-decoration: underline;
+}
+
+.proceed-button {
+    width: 100%;
+    background-color: #e65c00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+.proceed-button:hover {
+    background-color: #cc5200;
+}
+
+
+
+.booking-details {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+}
+
+.booking-details h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.booking-details p {
+    font-size: 16px;
+    margin: 9px 0;
+}
+
+.det_nav {
+    display: flex;
+    justify-content: space-between;
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.det-head {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.det-head:hover {
+    text-decoration: underline;
+}
+
+.Detail-container {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+    max-width: 100%; 
+    justify-content: center;
+}
+.Detail-container h4{
+    text-align: center; 
+   
+}
+.Detail-container ul {
+    list-style: none;
+    padding: 5px;
+}
+.Detail-container .Re-icon{
+padding-right: 8px;
+}
+
+.Detail-container ul li::before {
+    color: black;
+    font-weight: bold;
+}
+.terms-container {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+    max-height: 125px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.terms-container h3 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.terms-container p {
+    font-size: 14px;
+    margin: 8px 0;
+    word-wrap: break-word;
+}
+
+
+@media (max-width: 768px) {
+    .Bookbutton-container{
+        flex-direction: column;
+    }
+}

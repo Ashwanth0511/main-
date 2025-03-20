@@ -214,11 +214,13 @@ const handlecomments = (e)=>{
 </div>
 
 <div className="faq-comment">
-  <h2>Write a comment</h2>
+<h2>Write a comment</h2>
+  <div className="faq-sec">
+ 
  <form onSubmit={(e)=>handlecomments(e)}>
-  <textarea rows={4} cols={50} maxLength={60} placeholder="Write a comment" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
+  <textarea rows={1} cols={100} maxLength={70} placeholder="Write a comment" value={comment} onChange={(e)=>setComment(e.target.value)}></textarea>
   <button className="faq-send" type="submit" ><BsFillSendFill /></button>
- </form>
+ </form></div>
 
  <h2>previous comments</h2>
  <div className="Commentdet">

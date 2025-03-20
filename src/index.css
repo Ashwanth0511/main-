@@ -10,4 +10,6 @@ body {
     margin-top: 10px; 
     min-height: 100vh;
     padding-top: 80px;
+    max-width: 100vw;
+    overflow-x: hidden;
 }

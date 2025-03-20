@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export function Displaybike({need,still}){
   const needn = new Date(need);
   const stilln = new Date(still);
+  const rentalDays = Math.ceil((stilln.getTime() - needn.getTime()) / (1000 * 60 * 60 * 24));
   const [bikelist,setBikelist] = useState([])
   const [bikes,setBikes] = useState([]);
   const [searchTerm,setSearchTerm] = useState("")
@@ -33,6 +34,7 @@ export function Displaybike({need,still}){
   const handlebook = (bikeId) => {
           const selectedBike = bikes.find((bike) => bike._id === bikeId);
     if (selectedBike) {
+      selectedBike.price = selectedBike.price * rentalDays
       navigate('/bikebooking', { state: { selectedbike: selectedBike,needn,stilln } });
     }
   };
@@ -47,7 +49,7 @@ export function Displaybike({need,still}){
     };
 });
 
-const filterbikes = selectedcompany
+const filterbikes = selectedcompany && selectedcompany != "All"
 ? availableBike.filter((bike) => bike.type === selectedcompany)
     : availableBike;
 

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Displaycar({need,still}) {
     const needn = new Date(need);
   const stilln = new Date(still);
+  const rentalDays = Math.ceil((stilln.getTime() - needn.getTime()) / (1000 * 60 * 60 * 24));
   const [carlist,setCarlist] = useState([])
   const [cars,setCars] = useState([]);
   const [searchTerm,setSearchTerm] = useState("")
@@ -32,6 +33,7 @@ export default function Displaycar({need,still}) {
   const handlebook = (carId) => {
     const selectedCar = cars.find((car) => car._id === carId);
     if (selectedCar) {
+        selectedCar.price*=rentalDays;
       navigate('/carbooking', { state: { selectedcar: selectedCar,needn,stilln } });
     }
   };
@@ -46,7 +48,7 @@ export default function Displaycar({need,still}) {
     };
 });
 
-const filtercars = selectedcompany
+const filtercars = selectedcompany && selectedcompany != "All"
 ? availablecar.filter((car) => car.type === selectedcompany)
     : availablecar;
 
